@@ -1,7 +1,15 @@
 plugins {
   id 'org.stackwork' version '0.9.0-rc.1'
+  id 'nebula.release' version '4.1.1'
 }
 
 stackwork {
   moduleType = org.stackwork.gradle.docker.ModuleType.DELIVERABLE_IMAGE
+  imageName = 'weaviate'
+}
+
+tasks.tagImage.doFirst {
+  // to locally build and tag an image, the elaborate version with git hash etc must have the plus-sign removed, for
+  // that is not allowed in an image name
+  project.version = project.version.toString().replaceAll('\\+', '')
 }
