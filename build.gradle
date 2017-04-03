@@ -1,5 +1,5 @@
 plugins {
-  id 'org.stackwork' version '0.9.0-rc.1'
+  id 'org.stackwork' version '0.9.0'
   id 'nebula.release' version '4.1.1'
 }
 
